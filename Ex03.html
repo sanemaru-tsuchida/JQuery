@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    趣味は何ですか？<select id="select">
+        <option value="0">--</option>
+        <option value="1">トライアスロン</option>
+        <option value="2">その他</option>
+    </select>
+    <p id="00">それでは好きな種目は？</p>
+    <p id="01">それでは何が好き？</p>
+
+    <label><input class="radio"type="radio"name="swim"value="swim">Swim</label>
+    <label><input class="radio"type="radio"name="bike"value="bike">Bike</label>
+    <label><input class="radio"type="radio"name="run"value="ran">Ran</label>
+
+    <input type="text" id="text">
+
+    <script>
+        $(function(){
+            $("label").hide();
+            $("#text").hide();
+            $("#00,#01").hide();
+          
+
+            $("#select").on("change",function(){ 
+                $("label").hide();
+                $("#text").hide();
+                $("#00,#01").hide();
+
+                if($("#select").val()=="1"){
+                    $("#00").show();
+                    $("label").show();
+                
+                    
+                }else if($("#select").val()=="2"){
+                    $("#01").show();
+                    $("#text").show();
+
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
